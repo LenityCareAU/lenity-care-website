@@ -1,0 +1,815 @@
+# lenity-care-website
+Lenity Care Australia website
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lenity Care Australia - NDIS disability support services in Greater Sydney. Caring, person-centered support with 95% client retention. Support Coordination, Psychosocial Coaching, Early Intervention, Home Modifications, Personal Training.">
+    <meta name="keywords" content="NDIS, disability support, Blacktown, early intervention, support coordination, psychosocial coaching">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Lenity Care Australia - Disability Support Services">
+    <meta property="og:description" content="NDIS-registered disability support services with 95% client retention rate">
+    <meta name="theme-color" content="#0099CC">
+    <title>Lenity Care Australia - NDIS Disability Support Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0099CC;
+            --primary-green: #7BC000;
+            --dark-blue: #0073A8;
+            --light-gray: #F5F5F5;
+            --text-dark: #2C2C2C;
+            --text-light: #666;
+            --border-color: #E0E0E0;
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: white;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: opacity 0.3s;
+        }
+
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        .logo svg {
+            height: 35px;
+            width: auto;
+        }
+
+        .logo-text {
+            display: inline;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            max-width: 800px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 700px;
+        }
+
+        .cta-button {
+            background: white;
+            color: var(--primary-blue);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 0.5rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Page Content */
+        .page {
+            display: none;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Sections */
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .section.light {
+            background: var(--light-gray);
+        }
+
+        /* Value Proposition */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .value-card h3 {
+            color: var(--primary-green);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-blue);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-left-color: var(--primary-green);
+            transform: translateX(4px);
+        }
+
+        .service-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 153, 204, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            background: var(--primary-blue);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .form-submit:hover {
+            background: var(--dark-blue);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-blue);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .ndis-badge {
+            display: inline-block;
+            background: var(--primary-green);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-button.secondary {
+                display: block;
+                margin: 1rem 0 0 0;
+            }
+
+            .values-grid, .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Schema markup */
+        .json-ld {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Lenity Care Australia",
+      "description": "NDIS-registered disability support services in Greater Sydney",
+      "url": "https://lenity.com.au",
+      "telephone": "+61499938844",
+      "email": "info@lenity.com.au",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Suite 106, 30 Campbell Street",
+        "addressLocality": "Blacktown",
+        "addressRegion": "NSW",
+        "postalCode": "2148",
+        "addressCountry": "AU"
+      },
+      "sameAs": ["https://facebook.com/lenitycare"],
+      "areaServed": "Greater Sydney, NSW",
+      "priceRange": "$$"
+    }
+    </script>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo" onclick="showPage('home'); return false;">
+            <svg viewBox="0 0 1024 768" width="40" height="30" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="220" cy="192" r="110" fill="#0099CC"/>
+                <circle cx="320" cy="180" r="100" fill="#0099CC"/>
+                <path d="M 180 280 Q 150 350 220 420 L 280 360 Q 320 420 380 380 L 300 280 Z" fill="#0099CC"/>
+                <circle cx="804" cy="192" r="110" fill="#7BC000"/>
+                <circle cx="704" cy="180" r="100" fill="#7BC000"/>
+                <path d="M 844 280 Q 874 350 804 420 L 744 360 Q 704 420 644 380 L 724 280 Z" fill="#7BC000"/>
+            </svg>
+            <span class="logo-text">LenityCare</span>
+        </a>
+        <ul>
+            <li><a onclick="showPage('home'); return false;">Home</a></li>
+            <li><a onclick="showPage('services'); return false;">Services</a></li>
+            <li><a onclick="showPage('about'); return false;">About</a></li>
+            <li><a onclick="showPage('contact'); return false;">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <div class="hero">
+            <h1>Get local disability supports matched to your culture, language and needs</h1>
+            <p>95% client retention rate. Friendly, professional care.</p>
+            <button class="cta-button" onclick="showPage('contact'); return false;">Start Your Journey</button>
+            <button class="cta-button secondary" onclick="showPage('services'); return false;">Learn More</button>
+        </div>
+
+        <div class="section light">
+            <h2>Why Choose Lenity Care</h2>
+            <p style="color: var(--text-light); font-size: 1.1rem; margin-bottom: 2rem;">We're committed to person-centered, culturally safe, quality disability support services.</p>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>💙 Caring</h3>
+                    <p>We provide compassionate, respectful support tailored to each participant's unique needs. Our team genuinely cares about your wellbeing and independence.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🌟 Going Out</h3>
+                    <p>We encourage participants to engage with their community, pursue interests, and build meaningful connections that enrich their lives.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🎯 Independence</h3>
+                    <p>Our goal is to empower you to achieve your goals and live as independently as possible. We support your choices and aspirations.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Our Services</h2>
+            <p style="color: var(--text-light); font-size: 1.1rem; margin-bottom: 2rem;">Comprehensive disability support services designed for you.</p>
+            <div class="services-grid">
+                <div class="service-card" onclick="showPage('services'); return false;" style="cursor: pointer;">
+                    <h3>Support Coordination</h3>
+                    <p>Expert guidance to help you navigate your NDIS plan and connect with services that work for you.</p>
+                </div>
+                <div class="service-card" onclick="showPage('services'); return false;" style="cursor: pointer;">
+                    <h3>Psychosocial Recovery Coaching</h3>
+                    <p>Recovery-focused coaching to build resilience, independence, and hope for a better future.</p>
+                </div>
+                <div class="service-card" onclick="showPage('services'); return false;" style="cursor: pointer;">
+                    <h3>Early Childhood Intervention</h3>
+                    <p>Early support for children with developmental needs to help them reach their full potential.</p>
+                </div>
+                <div class="service-card" onclick="showPage('services'); return false;" style="cursor: pointer;">
+                    <h3>Home Modifications</h3>
+                    <p>Safe, accessible home modifications to support independence and quality of life.</p>
+                </div>
+                <div class="service-card" onclick="showPage('services'); return false;" style="cursor: pointer;">
+                    <h3>Personal Training</h3>
+                    <p>Accessible fitness and health support tailored to individual abilities and goals.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section light">
+            <h2>Why Trust Lenity Care</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: bold; color: var(--primary-green);">95%</div>
+                    <div style="color: var(--text-light);">Client Retention Rate</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: bold; color: var(--primary-green);">Since 2018</div>
+                    <div style="color: var(--text-light);">Established & Growing</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: bold; color: var(--primary-green);">NDIS Registered</div>
+                    <div style="color: var(--text-light);">Quality & Safeguards</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: bold; color: var(--primary-green);">25+ Suburbs</div>
+                    <div style="color: var(--text-light);">Greater Sydney</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" style="text-align: center; background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%); color: white; border-radius: 8px;">
+            <h2 style="color: white;">Ready to get started?</h2>
+            <p style="color: rgba(255,255,255,0.95); margin: 1rem 0 2rem;">Get in touch today to learn how Lenity Care can support you.</p>
+            <button class="cta-button" onclick="showPage('contact'); return false;">Contact Us</button>
+        </div>
+    </div>
+
+    <!-- SERVICES PAGE -->
+    <div id="services" class="page">
+        <div style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%); color: white; padding: 4rem 2rem; text-align: center;">
+            <h1 style="font-size: 2.5rem;">Our Services</h1>
+            <p style="font-size: 1.2rem; opacity: 0.95;">Comprehensive disability support tailored to your needs</p>
+        </div>
+
+        <div class="section">
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Support Coordination</h3>
+                    <p><strong>Who provides it:</strong> Qualified support coordinators with NDIS experience.</p>
+                    <p style="margin-top: 1rem;"><strong>How it helps:</strong> We guide you through your NDIS plan, help you access services, and ensure you get the support you need.</p>
+                    <p style="margin-top: 1rem;"><strong>Process:</strong> Initial assessment → Planning → Ongoing coordination & advocacy</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Psychosocial Recovery Coaching</h3>
+                    <p><strong>Focus:</strong> Mental health recovery with a strength-based, person-centered approach.</p>
+                    <p style="margin-top: 1rem;"><strong>Specific Outcomes:</strong> Increased independence, resilience, social connection, and hope.</p>
+                    <p style="margin-top: 1rem;"><strong>Integration:</strong> Fully aligned with your NDIS plan goals and recovery journey.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Early Childhood Intervention</h3>
+                    <p><strong>Age Range:</strong> Birth to school age children with developmental needs.</p>
+                    <p style="margin-top: 1rem;"><strong>Support Areas:</strong> Speech, physical development, cognitive, social, and emotional support.</p>
+                    <p style="margin-top: 1rem;"><strong>Approach:</strong> Family-centered, play-based intervention in natural environments.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Home Modifications</h3>
+                    <p><strong>What we offer:</strong> Safe, accessible home modifications for independence and safety.</p>
+                    <p style="margin-top: 1rem;"><strong>Process:</strong> Assessment → Design → Implementation → Follow-up</p>
+                    <p style="margin-top: 1rem;"><strong>Examples:</strong> Ramps, handrails, bathroom modifications, mobility aids installation.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Personal Training</h3>
+                    <p><strong>Focus:</strong> Accessible fitness and health support tailored to your abilities.</p>
+                    <p style="margin-top: 1rem;"><strong>Qualifications:</strong> Certified, disability-aware fitness professionals.</p>
+                    <p style="margin-top: 1rem;"><strong>Outcomes:</strong> Improved health, strength, confidence, and community engagement.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section light">
+            <h2>How to Access Our Services</h2>
+            <div style="margin-top: 2rem;">
+                <div style="background: white; padding: 2rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 0.5rem;">For NDIS Participants</h3>
+                    <p>You can access our services through your NDIS plan. Simply contact us to discuss your needs, and we'll help you navigate the process.</p>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 8px;">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Funding & Costs</h3>
+                    <p>Most of our services are funded through the NDIS. We work with participants to maximize their plan funds and ensure they get the best value support.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page">
+        <div style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%); color: white; padding: 4rem 2rem; text-align: center;">
+            <h1 style="font-size: 2.5rem;">About Lenity Care Australia</h1>
+            <p style="font-size: 1.2rem; opacity: 0.95;">Committed to person-centered, culturally safe disability support</p>
+        </div>
+
+        <div class="section">
+            <h2>Our Story</h2>
+            <p style="color: var(--text-light); font-size: 1.1rem; margin-bottom: 1rem;">Founded in 2018, Lenity Care Australia was created with a simple but powerful mission: to provide culturally safe, person-centered disability support services that respect the diversity and individual needs of every participant.</p>
+            <p style="color: var(--text-light); font-size: 1.1rem;">We believe that every person deserves high-quality support that honors their culture, language, and aspirations. That's why we've built a team of passionate, qualified professionals dedicated to making a real difference in the lives of NDIS participants across Greater Sydney.</p>
+        </div>
+
+        <div class="section light">
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Person-Centered</h3>
+                    <p>You are at the heart of everything we do. Your goals, preferences, and choices guide our support.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Culturally Safe</h3>
+                    <p>We respect and celebrate diversity. Our support is tailored to your cultural background and communication needs.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Quality-Focused</h3>
+                    <p>We continuously improve our services to meet the highest standards of quality and safety.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Participatory</h3>
+                    <p>We work with participants as partners, valuing your input and ensuring your voice is heard.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>NDIS Accreditation</h2>
+            <div style="background: white; padding: 2rem; border-radius: 8px; text-align: center;">
+                <div class="ndis-badge">NDIS Registered Provider</div>
+                <p style="color: var(--text-light); margin-bottom: 1.5rem;">We are committed to the NDIS Quality and Safeguards Commission standards and maintain the highest levels of participant safety and service quality.</p>
+                <a href="https://www.ndiscommission.gov.au/" style="color: var(--primary-blue); text-decoration: none; font-weight: bold;">Verify provider compliance →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page">
+        <div style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%); color: white; padding: 4rem 2rem; text-align: center;">
+            <h1 style="font-size: 2.5rem;">Get In Touch</h1>
+            <p style="font-size: 1.2rem; opacity: 0.95;">We're here to help. Contact us today to start your journey.</p>
+        </div>
+
+        <div class="section">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem;">
+                <div>
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1.5rem;">Contact Information</h3>
+                    <div style="margin-bottom: 1.5rem;">
+                        <p style="font-weight: bold; margin-bottom: 0.5rem;">📍 Address</p>
+                        <p style="color: var(--text-light);">Suite 106, 30 Campbell Street<br>Blacktown NSW 2148</p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <p style="font-weight: bold; margin-bottom: 0.5rem;">📱 Phone</p>
+                        <p style="color: var(--text-light);"><a href="tel:+61499938844" style="color: var(--primary-blue); text-decoration: none;">0499 938 844</a><br><a href="tel:+61296222291" style="color: var(--primary-blue); text-decoration: none;">02 9622 2291</a></p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <p style="font-weight: bold; margin-bottom: 0.5rem;">✉️ Email</p>
+                        <p style="color: var(--text-light);"><a href="mailto:info@lenity.com.au" style="color: var(--primary-blue); text-decoration: none;">info@lenity.com.au</a></p>
+                    </div>
+                </div>
+
+                <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="inquiry">Inquiry Type *</label>
+                        <select id="inquiry" name="inquiry" required>
+                            <option value="">Select an option</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="info">Request Information</option>
+                            <option value="consultation">Book a Consultation</option>
+                            <option value="feedback">Provide Feedback</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Send Message</button>
+                    <div id="form-status" style="margin-top: 1rem; text-align: center; display: none;"></div>
+                </form>
+            </div>
+        </div>
+
+        <div class="section light">
+            <h2>Frequently Asked Questions</h2>
+            <div style="max-width: 700px; margin: 2rem auto;">
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 0.5rem;">What is NDIS?</h3>
+                    <p style="color: var(--text-light);">The National Disability Insurance Scheme (NDIS) is an Australian government program that provides funding and support for eligible people with disabilities.</p>
+                </div>
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 0.5rem;">How do I access your services?</h3>
+                    <p style="color: var(--text-light);">If you're an NDIS participant, you can request our services through your NDIS plan. Contact us to discuss your needs and how we can help.</p>
+                </div>
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 0.5rem;">What qualifications do your staff have?</h3>
+                    <p style="color: var(--text-light);">Our team includes qualified support coordinators, recovery coaches, early intervention specialists, and personal trainers with relevant experience and certifications.</p>
+                </div>
+                <div style="background: white; padding: 1.5rem; border-radius: 8px;">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 0.5rem;">What if I'm not happy with a service?</h3>
+                    <p style="color: var(--text-light);">Your feedback is important to us. We have a clear complaints procedure to address any concerns. Please contact us directly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('home'); return false;">Home</a></li>
+                    <li><a href="#" onclick="showPage('services'); return false;">Services</a></li>
+                    <li><a href="#" onclick="showPage('about'); return false;">About Us</a></li>
+                    <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Accessibility Statement</a></li>
+                    <li><a href="#">Complaints Procedure</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:+61499938844">📱 0499 938 844</a></li>
+                    <li><a href="tel:+61296222291">📞 02 9622 2291</a></li>
+                    <li><a href="mailto:info@lenity.com.au">✉️ info@lenity.com.au</a></li>
+                    <li>🏢 Blacktown, NSW 2148</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>NDIS & Compliance</h4>
+                <ul>
+                    <li><a href="https://www.ndiscommission.gov.au/" target="_blank">Verify Provider</a></li>
+                    <li><a href="#">Quality & Safeguards</a></li>
+                    <li><a href="#">Safeguarding Policy</a></li>
+                    <li><a href="#">Complaints Process</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lenity Care Australia Pty Ltd (ABN 19 626 201 509). All rights reserved.</p>
+            <p>Last updated: September 13, 2026 | NDIS Registered Provider</p>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageName) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            const page = document.getElementById(pageName);
+            if (page) {
+                page.classList.add('active');
+                window.scrollTo(0, 0);
+            }
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                inquiry: document.getElementById('inquiry').value,
+                message: document.getElementById('message').value,
+                timestamp: new Date().toISOString()
+            };
+
+            // Send to Formspree (FREE service - no setup needed!)
+            fetch('https://formspree.io/f/xvgppgeb', {
+                method: 'POST',
+                body: JSON.stringify(formData),
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => {
+                if (response.ok) {
+                    const statusDiv = document.getElementById('form-status');
+                    statusDiv.innerHTML = '<p style="color: #7BC000; font-weight: bold;">✓ Message sent! We\'ll be in touch soon.</p>';
+                    statusDiv.style.display = 'block';
+                    document.getElementById('name').value = '';
+                    document.getElementById('email').value = '';
+                    document.getElementById('phone').value = '';
+                    document.getElementById('inquiry').value = '';
+                    document.getElementById('message').value = '';
+                    setTimeout(() => statusDiv.style.display = 'none', 5000);
+                } else {
+                    alert('Error sending message. Please try again.');
+                }
+            })
+            .catch(error => {
+                alert('There was an error sending your message. Please try calling us directly.');
+                console.error('Error:', error);
+            });
+        }
+
+        // Google Analytics (replace with your actual GA ID)
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G_YOUR_GA_ID'); // Update with your GA4 ID after deployment
+    </script>
+</body>
+</html>
