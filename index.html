@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NDIS Provider Blacktown | Lenity Care Australia</title>
-<meta name="description" content="NDIS registered provider in Blacktown. Daily living, household, community, transport, SIL and respite, support coordination and more across Western Sydney.">
+<meta name="description" content="Registered NDIS provider in Blacktown: daily living, household, community, transport, SIL, respite and more across Western Sydney and South Western Sydney.">
 <link rel="canonical" href="https://www.lenity.com.au/">
 <meta name="theme-color" content="#0B7DB7">
 <meta property="og:type" content="website">
@@ -13,8 +13,15 @@
 <meta property="og:description" content="Local disability supports matched to your culture, language and needs. Registered NDIS provider supporting Western Sydney and South Western Sydney since 2018.">
 <meta property="og:url" content="https://www.lenity.com.au/">
 <meta property="og:locale" content="en_AU">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://www.lenity.com.au/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Lenity Care Australia: registered NDIS provider for Western Sydney and South Western Sydney">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.lenity.com.au/og-image.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='30 29 900 900'%3E%3Cdefs%3E%3Cpath id='r' d='M457 298C425 232 340 188 262 192C160 197 88 282 92 385C95 480 175 565 275 648C340 700 405 745 455 772L446 704C400 675 340 632 285 585C205 518 165 455 168 388C171 322 222 270 296 268C360 266 415 300 447 374Z'/%3E%3C/defs%3E%3Cuse href='%23r' fill='%231EA6E3'/%3E%3Cuse href='%23r' fill='%237DC000' transform='matrix(-1 0 0 1 960 0)'/%3E%3Ccircle cx='143' cy='288' r='102' fill='%230B7DB7'/%3E%3Ccircle cx='817' cy='288' r='102' fill='%237AB600'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&family=Courier+Prime:wght@700&display=swap" rel="stylesheet">
@@ -32,6 +39,9 @@
       "url": "https://www.lenity.com.au/",
       "telephone": "+61499938844",
       "email": "info@lenity.com.au",
+      "logo": "https://www.lenity.com.au/icon-512.png",
+      "image": "https://www.lenity.com.au/og-image.png",
+      "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "telephone": "+61499938844", "email": "info@lenity.com.au", "areaServed": "AU", "availableLanguage": "English"},
       "foundingDate": "2018",
       "address": {"@type": "PostalAddress", "streetAddress": "Suite 106, 30 Campbell Street", "addressLocality": "Blacktown", "addressRegion": "NSW", "postalCode": "2148", "addressCountry": "AU"},
       "areaServed": [{"@type": "Place", "name": "Western Sydney, NSW"}, {"@type": "Place", "name": "South Western Sydney, NSW"}],
@@ -68,7 +78,7 @@
    ============================================================ */
 :root{
   --blue:#1EA6E3;      /* logo ribbon blue */
-  --blue-d:#0B7DB7;    /* logo circle blue, text-safe */
+  --blue-d:#0A6FA3;    /* logo circle blue, darkened slightly so text passes WCAG AA on tinted panels */
   --blue-dd:#075E8C;
   --green:#7DC000;     /* logo ribbon green */
   --green-d:#5C9500;   /* text-safe green */
@@ -508,7 +518,7 @@ a.ndis-pill:hover{background:rgba(125,192,0,.28);text-decoration:none;color:#DFF
 .foot-bottom{align-items:center}
 .foot-bottom .copy{margin:0;color:#8FA3B4}
 .made{display:inline-flex;align-items:center;gap:6px;margin:0;color:#DCE8F1;font-weight:600}
-.made-heart{width:18px;height:18px;fill:#FF6B6B;transform-origin:center;animation:beat 1.6s ease-in-out infinite}
+.made-heart{display:inline-block;color:#FF6B6B;font-size:1.25em;line-height:1;transform-origin:center;animation:beat 1.6s ease-in-out infinite}
 html.a11y-pause .made-heart{animation:none}
 .ack p{margin:0;color:#A9BBC9}
 @media (max-width:1100px){
@@ -1112,6 +1122,21 @@ html.a11y-dark .callout.urgent{background:#2A1512;border-color:#6B2A22}
 html.a11y-dark .callout.urgent b{color:#FF9C8F}
 html.a11y-dark :focus-visible{outline-color:#9EDCF8}
 @media (max-width:980px){html.a11y-dark .nav{background:#12212C}}
+/* Round 3: dark mode for page cards, form notes, required marks, placeholders, skip link and active pill */
+html.a11y-dark :is(.pg-meaning,.pg-vm-card,.pg-promise,.pg-nrs-item,.pg-lang){background-color:#12212C}
+html.a11y-dark :is(.pg-face label,.pg-tl-list a){background-color:#12212C;border-color:#7F95A6}
+html.a11y-dark .pg-face:hover label{border-color:var(--blue-d)}
+html.a11y-dark .pg-face input:checked+label{background-color:#173244;border-color:var(--blue-dd)}
+html.a11y-dark .pg-tl-list a:hover{background-color:#173244;border-color:var(--blue-d)}
+html.a11y-dark .form .pg-form-note{background:#2A2210;border-left-color:#C98F00}
+html.a11y-dark .form .pg-form-note strong{color:#FFD27A}
+html.a11y-dark .req{color:#FF9C8F}
+html.a11y-dark ::placeholder{color:#A9BBC9;opacity:1}
+html.a11y-dark .skip-link,html.a11y-dark .pill-nav.svc-pills a[aria-current="location"]{background:#6CCBF5;border-color:#6CCBF5;color:#06202E}
+/* Round 3: invalid form fields, and Escape-dismissed desktop dropdowns */
+.f-group [aria-invalid="true"]{border-color:#C0392B;box-shadow:0 0 0 3px rgba(192,57,43,.15)}
+html.a11y-dark .f-group [aria-invalid="true"]{border-color:#FF9C8F;box-shadow:0 0 0 3px rgba(255,156,143,.25)}
+@media (min-width:981px){.has-sub.sub-off .sub{opacity:0!important;visibility:hidden!important;transform:translateY(10px)!important}}
 
 /* ---------- 11. The widget itself ---------- */
 .a11y{--a11y-bg:#fff;--a11y-fg:#15232E;--a11y-mut:#5F7180;--a11y-line:#D5E0E8;--a11y-soft:#F4F8FB;--a11y-acc:#0B7DB7;--a11y-acc-2:#075E8C;--a11y-on:#fff;--a11y-focus:#075E8C;--a11y-off:#7A8C9A;font-family:var(--font-b,'Inter',system-ui,sans-serif);color:var(--a11y-fg);line-height:1.5}
@@ -1324,7 +1349,7 @@ html.a11y-pause .scene *,.scene.paused *,.paused .scene *{animation-play-state:p
 html.a11y-dark :is(.mo-cap,.mo-ctrl,.mo-mq-toggle,.mo-pill,.mo-mq-list>li>a,.svc-mq){background-color:#12212C!important;border-color:#2B4152!important;color:#E8F0F6!important}
 html.a11y-dark :is(.mo-cap,.mo-ctrl,.mo-mq-toggle,.svc-mq) .ic{color:#9EDCF8!important}
 html.a11y-dark .mo-toggle{color:#06202E!important}
-@media (min-width:981px) and (max-width:1120px){.sub.sub-wide{left:auto;right:0}}
+@media (min-width:981px) and (max-width:1120px){.sub.sub-wide,.sub.sub-end{left:auto;right:0}}
 html.a11y-contrast .pg-face input:checked+label{background-color:#FFE600!important;color:#000!important;border-color:#FFE600!important;outline:3px solid #FFE600!important}
 html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
 .mo-marquee:not(.mo-mq-ready) .mo-mq-rev,html.a11y-pause .mo-mq-rev{display:none}
@@ -1537,7 +1562,7 @@ html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
         </li>
         <li class="has-sub">
           <a href="#/faq" data-page="faq">Help <svg class="ic" aria-hidden="true"><use href="#i-chevron"/></svg></a>
-          <ul class="sub" aria-label="Help">
+          <ul class="sub sub-end" aria-label="Help">
             <li><a href="#/faq"><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg>FAQ</a></li>
             <li><a href="#/easyread"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg>Easy Read</a></li>
             <li><a href="#/languages"><svg class="ic" aria-hidden="true"><use href="#i-translate"/></svg>Languages &amp; Interpreters</a></li>
@@ -1859,18 +1884,6 @@ html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
         <div class="commit-item"><div class="ib"><svg class="ic" aria-hidden="true"><use href="#i-sparkle"/></svg></div><h3 class="h4">Quality &amp; improvement</h3><p>We measure, listen and keep getting better.</p></div>
         <div class="commit-item"><div class="ib g"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg></div><h3 class="h4">Safeguarding &amp; rights</h3><p>Zero tolerance for abuse or neglect. Your rights come first.</p></div>
         <div class="commit-item"><div class="ib"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg></div><h3 class="h4">Community</h3><p>Connected to local services, groups and networks.</p></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Testimonials: hidden until consented quotes are supplied. Remove the `hidden` attribute to show. -->
-  <div class="section alt" hidden id="testimonials">
-    <div class="container">
-      <div class="sec-head center reveal"><span class="eyebrow">Participant stories</span><h2>What people say about Lenity</h2><p class="lead">Shared with permission. First names only.</p></div>
-      <div class="grid grid-3 stagger">
-        <blockquote class="card"><svg class="ic ic-lg" aria-hidden="true" style="color:var(--blue)"><use href="#i-hand"/></svg><p style="margin-top:14px">[Quote: replace with a consented participant or family testimonial.]</p><footer style="margin-top:14px;font-weight:600">First name, Suburb</footer></blockquote>
-        <blockquote class="card"><svg class="ic ic-lg" aria-hidden="true" style="color:var(--blue)"><use href="#i-hand"/></svg><p style="margin-top:14px">[Quote: replace with a consented participant or family testimonial.]</p><footer style="margin-top:14px;font-weight:600">First name, Suburb</footer></blockquote>
-        <blockquote class="card"><svg class="ic ic-lg" aria-hidden="true" style="color:var(--blue)"><use href="#i-hand"/></svg><p style="margin-top:14px">[Quote: replace with a consented participant or family testimonial.]</p><footer style="margin-top:14px;font-weight:600">First name, Suburb</footer></blockquote>
       </div>
     </div>
   </div>
@@ -2643,7 +2656,7 @@ html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
 
   <div class="section audience" id="referrers">
     <div class="container">
-      <div class="sec-head reveal"><span class="eyebrow">For referrers &amp; professionals</span><h2>Simple referrals, responsive communication</h2><p class="lead">We work with Local Area Coordinators, Support Coordinators, hospitals, schools, GPs, allied health and community organisations across Western Sydney.</p></div>
+      <div class="sec-head reveal"><span class="eyebrow">For referrers &amp; professionals</span><h2>Simple referrals, responsive communication</h2><p class="lead">We work with Local Area Coordinators, Support Coordinators, hospitals, schools, GPs, allied health and community organisations across Western Sydney and South Western Sydney.</p></div>
       <div class="grid grid-2 stagger">
         <div class="card">
           <div class="ib"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg></div>
@@ -3122,7 +3135,7 @@ html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
           <h3 class="h4"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-hand"/></svg>Help to have your say</h3>
           <ul class="check-list">
             <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Ask a family member, friend or advocate to help you, or to speak for you.</span></li>
-            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Find a free, independent advocate with the <a href="https://disabilityadvocacyfinder.dss.gov.au/" target="_blank" rel="noopener">Disability Advocacy Finder<span class="pg-sr"> (opens in a new tab)</span></a>.</span></li>
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Find a free, independent advocate with the <a href="https://askizzy.org.au/disability-advocacy-finder" target="_blank" rel="noopener">Disability Advocacy Finder<span class="pg-sr"> (opens in a new tab)</span></a>.</span></li>
             <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Need an interpreter? Call TIS National on <a href="tel:131450">131 450</a> and ask them to call Lenity Care on 0499 938 844.</span></li>
             <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Deaf, hard of hearing or speech difficulty? Use the <a href="#/languages/pg-relay">National Relay Service</a>.</span></li>
           </ul>
@@ -3193,7 +3206,7 @@ html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
             <div class="f-group"><label for="fb-name">Your name <span class="req pg-anon-req" aria-hidden="true">*</span></label><input id="fb-name" name="name" type="text" autocomplete="name" required></div>
             <div class="f-group"><label for="fb-email">Email <span class="req pg-anon-req" aria-hidden="true">*</span></label><input id="fb-email" name="email" type="email" autocomplete="email" required></div>
           </div>
-          <div class="f-group"><label for="fb-phone">Phone <span class="pg-opt-tag">(optional)</span></label><input id="fb-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
+          <div class="f-group"><label for="fb-phone">Phone <span class="pg-opt-tag" id="fb-phone-opt">(optional)</span><span class="req" id="fb-phone-req" aria-hidden="true" hidden>*</span></label><input id="fb-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
           <div class="f-check pg-check"><input type="checkbox" id="fb-callback" name="callback" value="Yes" aria-describedby="fb-callback-hint"><label for="fb-callback">I would like a call back</label></div>
           <p class="pg-hint pg-check-hint" id="fb-callback-hint">Please include your phone number so we can call you.</p>
         </fieldset>
@@ -3574,7 +3587,7 @@ html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
           <li><div class="ib g"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg></div><div><b>Office hours</b><span>Monday to Friday, 9:00 am to 5:00 pm<br>Outside these hours, leave a message and we'll call you back. Support services are delivered by arrangement.</span></div></li>
           <li><div class="ib"><svg class="ic" aria-hidden="true"><use href="#i-sun"/></svg></div><div><b>Accessibility</b><span>Our office is close to Blacktown Station and the bus interchange. Tell us about any access needs, such as wheelchair access, parking, an interpreter or a home visit, and we'll do our best to arrange it.</span></div></li>
           <li><div class="ib g"><svg class="ic" aria-hidden="true"><use href="#i-translate"/></svg></div><div><b>Need an interpreter?</b><span>Call TIS National on 131 450 and ask them to connect you to Lenity Care on 0499 938 844. See <a href="#/languages">languages and interpreters</a>.</span></div></li>
-          <li><div class="ib"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></div><div><b>Deaf, or hard of hearing or speech?</b><span>Use the National Relay Service: TTY 133 677, Speak and Listen 1300 555 727, SMS relay 0423 677 767.</span></div></li>
+          <li><div class="ib"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></div><div><b>Deaf, hard of hearing or have a speech difficulty?</b><span>Use the National Relay Service: TTY 133 677, Speak and Listen 1300 555 727, SMS relay 0423 677 767.</span></div></li>
           <li><div class="ib g"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg></div><div><b>Other ways to reach us</b><span><a href="https://wa.me/61499938844" target="_blank" rel="noopener">WhatsApp chat<span class="sr-only"> (opens in a new tab)</span></a> · <a href="#/referrals">Make a referral</a> · <a href="#/feedback">Give feedback</a><br>Follow us: <a href="https://www.facebook.com/LenityCareAU" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/lenitycareaustralia/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com/in/lenity-care-au-895156191" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://x.com/LenityCareAU" target="_blank" rel="noopener">X</a> · <a href="https://t.me/LenityCareAU" target="_blank" rel="noopener">Telegram</a></span></div></li>
         </ul>
       </div>
@@ -3582,20 +3595,20 @@ html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
         <h3>Send us a message</h3>
         <p>Fields marked <span class="req">*</span> are required.</p>
         <div class="f-row">
-          <div class="f-group"><label for="f-name">Your name <span class="req">*</span></label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
-          <div class="f-group"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
+          <div class="f-group"><label for="f-name">Your name <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+          <div class="f-group"><label for="f-phone">Phone <span class="req" id="f-phone-req" aria-hidden="true" hidden>*</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
         </div>
         <div class="f-row">
-          <div class="f-group"><label for="f-email">Email <span class="req">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="f-group"><label for="f-email">Email <span class="req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
           <div class="f-group"><label for="f-who">I am a…</label><select id="f-who" name="who"><option value="">Select</option><option>NDIS participant</option><option>Family member or carer</option><option>Support Coordinator / LAC</option><option>Health or education professional</option><option>Other</option></select></div>
         </div>
         <div class="f-row">
-          <div class="f-group"><label for="f-inquiry">How can we help? <span class="req">*</span></label><select id="f-inquiry" name="inquiry" required><option value="">Select</option><option>General enquiry</option><option>Request information about a service</option><option>Request a callback</option><option>Make a referral</option><option>Feedback or compliment</option><option>Complaint</option></select></div>
+          <div class="f-group"><label for="f-inquiry">How can we help? <span class="req" aria-hidden="true">*</span></label><select id="f-inquiry" name="inquiry" required><option value="">Select</option><option>General enquiry</option><option>Request information about a service</option><option>Request a callback</option><option>Make a referral</option><option>Feedback or compliment</option><option>Complaint</option></select></div>
           <div class="f-group"><label for="f-pref">Preferred contact</label><select id="f-pref" name="preferred"><option>Phone</option><option>Email</option></select></div>
         </div>
-        <div class="f-group"><label for="f-msg">Message <span class="req">*</span></label><textarea id="f-msg" name="message" required placeholder="Tell us a little about you, your goals and any language or access needs."></textarea></div>
+        <div class="f-group"><label for="f-msg">Message <span class="req" aria-hidden="true">*</span></label><textarea id="f-msg" name="message" required placeholder="Tell us a little about you, your goals and any language or access needs."></textarea></div>
         <div class="hp" aria-hidden="true"><label for="f-company">Leave this field empty</label><input id="f-company" name="lc_hp_check" type="text" tabindex="-1" autocomplete="off"></div>
-        <label class="f-check"><input type="checkbox" name="consent" required> I agree to Lenity Care contacting me about my enquiry and handling my details in line with the <a href="#/privacy">Privacy Policy</a>. <span class="req">*</span></label>
+        <label class="f-check"><input type="checkbox" name="consent" required> I agree to Lenity Care contacting me about my enquiry and handling my details in line with the <a href="#/privacy">Privacy Policy</a>. <span class="req" aria-hidden="true">*</span></label>
         <label class="f-check" style="margin-top:-8px"><input type="checkbox" name="newsletter"> Send me occasional NDIS updates and news from Lenity Care (optional).</label>
         <button type="submit" class="btn btn-primary btn-lg" style="width:100%" id="f-submit">Send message <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button>
         <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
@@ -3603,7 +3616,7 @@ html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
     </div>
     <div class="container">
       <div class="map reveal">
-        <iframe title="Map showing Lenity Care Australia office at Suite 106, 30 Campbell Street, Blacktown NSW 2148" src="https://www.google.com/maps?q=30+Campbell+Street,+Blacktown+NSW+2148&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <iframe title="Map showing Lenity Care Australia office at Suite 106, 30 Campbell Street, Blacktown NSW 2148" src="https://www.google.com/maps?q=30+Campbell+Street,+Blacktown+NSW+2148&output=embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <div class="map-fallback"><span>Suite 106, 30 Campbell Street, Blacktown NSW 2148</span><a class="link-arrow" href="https://www.google.com/maps/search/?api=1&query=30+Campbell+Street+Blacktown+NSW+2148" target="_blank" rel="noopener">Open in Google Maps <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
       </div>
     </div>
@@ -3625,7 +3638,7 @@ html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
     <ul><li>The NDIA, your plan manager, Local Area Coordinator or Support Coordinator.</li><li>Other providers and health professionals involved in your supports.</li><li>The NDIS Quality and Safeguards Commission, for example when reporting a reportable incident.</li><li>Emergency services when there is a serious threat to health or safety.</li><li>Our professional advisers and secure IT service providers, bound by confidentiality.</li></ul>
     <p>We do not sell your information.</p>
     <h3>Overseas disclosure</h3>
-    <p>Some of the tools that run this website may store information outside Australia. Messages sent through our website forms (contact, referral and feedback) are processed by a third-party form service, and our website analytics, the map on our contact page and the optional automatic translation are provided by Google; these providers may store data on servers located overseas, including in the United States. Please don't include detailed health information in these forms. Call us instead, or we'll collect it securely once we're working together. Where information is handled by overseas providers we take reasonable steps to ensure it is protected in line with the Australian Privacy Principles.</p>
+    <p>Some of the tools that run this website may store information outside Australia. Messages sent through our website forms (contact, referral and feedback) are processed by a third-party form service, and our website analytics, the fonts used on this website, the map on our contact page and the optional automatic translation are provided by Google; these providers may store data on servers located overseas, including in the United States. Please don't include detailed health information in these forms. Call us instead, or we'll collect it securely once we're working together. Where information is handled by overseas providers we take reasonable steps to ensure it is protected in line with the Australian Privacy Principles.</p>
     <h2>Storage and security</h2>
     <p>Information is stored in secure, access-controlled systems. Staff access only what they need for their role and are trained in privacy and confidentiality. We keep records for as long as required by law (generally 7 years after supports end) and then securely destroy them.</p>
     <h2>Your rights</h2>
@@ -3673,7 +3686,7 @@ html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
     <h2>Easy Read, languages and interpreters</h2>
     <ul><li>Read our <a href="#/easyread">Easy Read</a> page for simple words and pictures.</li><li>Visit <a href="#/languages">Languages and interpreters</a> for help in your language. Call TIS National on 131 450 for a free interpreter in most cases.</li><li>If you are deaf, or have a hearing or speech impairment, you can contact us through the National Relay Service: TTY 133 677, Speak and Listen 1300 555 727, SMS relay 0423 677 767.</li><li>We can provide information in large print, by phone, or talk it through with you in person.</li></ul>
     <h2>Known limitations</h2>
-    <ul><li>The embedded map is provided by Google and may not be fully accessible; the address and a link are provided as text alternatives.</li><li>Automatic translation is done by a computer and may not always be accurate. For important information, please ask for an interpreter.</li><li>Read aloud uses the voices installed on your device, so it may sound different on each device.</li><li>Some downloadable documents we provide may be older PDFs. Ask us for an accessible version.</li></ul>
+    <ul><li>The embedded map is provided by Google and may not be fully accessible; the address and a link are provided as text alternatives.</li><li>Automatic translation is done by a computer and may not always be accurate. For important information, please ask for an interpreter.</li><li>Read aloud uses the voices installed on your device, so it may sound different on each device.</li><li>If a document we send you is hard to read or use, ask us and we will provide it in a format that suits you.</li></ul>
     <h2>Tell us about a problem</h2>
     <p>If you have difficulty using any part of this site or accessing our services, please contact us at <a href="mailto:info@lenity.com.au">info@lenity.com.au</a> or 0499 938 844. We aim to respond within 2 business days and will work with you to provide what you need.</p>
   </div></div>
@@ -3684,8 +3697,8 @@ html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
   <div class="page-hero"><div class="container"><span class="eyebrow">Your rights</span><h1>Complaints</h1><p>Complaints are welcome, taken seriously and never affect your supports. Want to share a compliment or an idea? Use our <a href="#/feedback" style="color:#fff;text-decoration:underline">feedback page</a>.</p></div></div>
   <div class="section"><div class="container legal reveal">
     <h2>How to give feedback or make a complaint</h2>
-    <ul><li><strong>Talk to us</strong>: any staff member, or the person coordinating your supports.</li><li><strong>Phone</strong>: 0499 938 844 or 02 9622 2291.</li><li><strong>Email</strong>:<a href="mailto:info@lenity.com.au">info@lenity.com.au</a>.</li><li><strong>Online</strong>: our <a href="#/feedback">feedback form</a> (choose "Concern or complaint") or the <a href="#/contact/complaint">contact form</a>.</li><li><strong>In writing</strong>: Suite 106, 30 Campbell Street, Blacktown NSW 2148.</li></ul>
-    <p>You can complain anonymously, or ask a family member, friend, advocate or interpreter to help you. We can help you find an independent advocate through the <a href="https://disabilityadvocacyfinder.dss.gov.au/" target="_blank" rel="noopener">Disability Advocacy Finder</a>.</p>
+    <ul><li><strong>Talk to us</strong>: any staff member, or the person coordinating your supports.</li><li><strong>Phone</strong>: 0499 938 844 or 02 9622 2291.</li><li><strong>Email</strong>: <a href="mailto:info@lenity.com.au">info@lenity.com.au</a>.</li><li><strong>Online</strong>: our <a href="#/feedback">feedback form</a> (choose "Concern or complaint") or the <a href="#/contact/complaint">contact form</a>.</li><li><strong>In writing</strong>: Suite 106, 30 Campbell Street, Blacktown NSW 2148.</li></ul>
+    <p>You can complain anonymously, or ask a family member, friend, advocate or interpreter to help you. We can help you find an independent advocate through the <a href="https://askizzy.org.au/disability-advocacy-finder" target="_blank" rel="noopener">Disability Advocacy Finder<span class="sr-only"> (opens in a new tab)</span></a>.</p>
     <h2>What happens next</h2>
     <ol class="mini-steps"><li><strong>Acknowledge</strong>: we aim to confirm we've received your complaint within 2 business days.</li><li><strong>Listen &amp; investigate</strong>: we talk with you about what happened and what outcome you'd like, and look into it fairly.</li><li><strong>Resolve</strong>: we aim to resolve complaints within 21 days and keep you updated if it takes longer.</li><li><strong>Learn</strong>: we record complaints, fix the cause and use what we learn to improve.</li></ol>
     <h2>If you're not satisfied</h2>
@@ -3816,7 +3829,7 @@ html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
         <li><a href="#/complaints">Complaints</a></li>
         <li><a href="#/safeguarding">Safeguarding</a></li>
       </ul>
-      <p class="made">Made with <svg class="made-heart" viewBox="0 0 24 24" role="img" aria-label="love" focusable="false"><path d="M12 21C12 21 3 15.5 3 9.2 3 6.3 5.2 4 8 4c1.7 0 3.1.9 4 2.2C12.9 4.9 14.3 4 16 4c2.8 0 5 2.3 5 5.2C21 15.5 12 21 12 21z"/></svg> by LenityCareAU</p>
+      <p class="made">Made with <span class="made-heart" role="img" aria-label="love">&#9829;&#xFE0E;</span> by LenityCareAU</p>
     </div>
   </div>
 </footer>
@@ -4043,12 +4056,15 @@ html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
     html.style.scrollBehavior = prev;
   }
 
+  // Position on the page ignoring CSS transforms (entrance animations would otherwise skew it).
+  function docTop(el) { var y = 0; while (el) { y += el.offsetTop; el = el.offsetParent; } return y; }
+
   /* ---------- Mobile navigation ---------- */
   var toggle = document.getElementById('nav-toggle');
   var overlay = document.getElementById('nav-overlay');
   var nav = document.getElementById('nav');
   // While the drawer is open, make the page behind it inert so Tab stays inside the menu.
-  var inertTargets = [main, document.querySelector('.site-footer'), document.querySelector('.topbar')].filter(Boolean);
+  var inertTargets = [main, document.querySelector('.site-footer'), document.querySelector('.topbar'), document.getElementById('a11y'), document.getElementById('to-top'), document.querySelector('.skip-link')].filter(Boolean);
   var supportsInert = 'inert' in HTMLElement.prototype;
   function setBackgroundInert(on) {
     inertTargets.forEach(function (el) {
@@ -4077,6 +4093,23 @@ html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(true); });
   nav.addEventListener('click', function (e) { if (e.target.closest('a')) closeNav(false); });
 
+  // Desktop dropdowns open on hover or focus. Escape hides the open one until the pointer or focus leaves it (WCAG 1.4.13).
+  var subItems = document.querySelectorAll('.nav .has-sub');
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape' || body.classList.contains('nav-open')) return;
+    Array.prototype.forEach.call(subItems, function (li) {
+      var hasFocus = li.contains(document.activeElement);
+      if (!hasFocus && !li.matches(':hover')) return;
+      li.classList.add('sub-off');
+      var top = li.querySelector('a');
+      if (hasFocus && top && document.activeElement !== top) top.focus();
+    });
+  });
+  Array.prototype.forEach.call(subItems, function (li) {
+    li.addEventListener('mouseleave', function () { li.classList.remove('sub-off'); });
+    li.addEventListener('focusout', function (e) { if (!li.contains(e.relatedTarget)) li.classList.remove('sub-off'); });
+  });
+
   /* ---------- Header state & back-to-top ---------- */
   var toTop = document.getElementById('to-top');
   function onScroll() {
@@ -4092,6 +4125,7 @@ html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
     var sel = document.getElementById('f-inquiry');
     if (!sel || !PRESETS[key]) return false;
     Array.prototype.forEach.call(sel.options, function (o) { if (o.text === PRESETS[key]) sel.value = o.text; });
+    try { sel.dispatchEvent(new Event('change', { bubbles: true })); } catch (err) {}
     return true;
   }
   function route() {
@@ -4100,8 +4134,8 @@ html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
     var raw;
     try { raw = decodeURIComponent(location.hash.replace(/^#\/?/, '')); }
     catch (e) { raw = ''; }
-    var parts = raw.split('/');
-    var name = parts[0] || 'home';
+    var parts = raw.split('?')[0].split('/');
+    var name = (parts[0] || 'home').toLowerCase();
     var section = parts[1] || '';
     var page = null;
     for (var i = 0; i < pages.length; i++) { if (pages[i].getAttribute('data-page') === name) { page = pages[i]; break; } }
@@ -4123,19 +4157,20 @@ html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
 
     var target = null;
     if (name === 'contact' && section && presetInquiry(section)) target = document.getElementById('enquiry-form');
-    else if (section) target = document.getElementById(section);
+    else if (section) { try { target = page.querySelector('#' + (window.CSS && CSS.escape ? CSS.escape(section) : section)); } catch (err) { target = null; } }
 
     // Wait one frame so the page is displayed before measuring/scrolling.
     requestAnimationFrame(function () {
       if (target) {
-        var y = Math.max(0, target.getBoundingClientRect().top + window.scrollY - header.offsetHeight - 24);
+        var y = Math.max(0, docTop(target) - header.offsetHeight - 24);
         if (pageChanged || calm()) jumpTo(y); else window.scrollTo({ top: y, behavior: 'smooth' });
         if (name === 'contact') { var n = document.getElementById('f-name'); if (n) setTimeout(function () { n.focus({ preventScroll: true }); }, 500); }
         else { if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1'); target.focus({ preventScroll: true }); }
       } else if (!initial) {
         if (pageChanged || calm()) jumpTo(0); else window.scrollTo({ top: 0, behavior: 'smooth' });
-        main.setAttribute('tabindex', '-1');
-        main.focus({ preventScroll: true });
+        var focusEl = page.querySelector('h1') || main;
+        focusEl.setAttribute('tabindex', '-1');
+        focusEl.focus({ preventScroll: true });
       }
       observeReveals(page);
     });
@@ -4144,6 +4179,12 @@ html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
       window.gtag('event', 'page_view', { page_title: document.title, page_location: location.href, page_path: '/' + (name === 'home' ? '' : name) + (section ? '/' + section : '') });
     }
   }
+  // Selecting a link to the page you are already on runs the route again (back to the top, or to the section).
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#/"]');
+    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (a.getAttribute('href') === location.hash) { e.preventDefault(); route(); }
+  });
   window.addEventListener('hashchange', route);
   route();
 
@@ -4156,6 +4197,7 @@ html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
   });
 
   /* ---------- Forms (enquiry, referral, feedback): Formspree when configured, otherwise the visitor's email app ---------- */
+  function escHtml(v) { return String(v).replace(/[&<>"']/g, function (ch) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]; }); }
   function cleanLabel(t) { return (t || '').replace(/\*/g, '').replace(/\s+/g, ' ').trim(); }
   function fieldLabel(form, el, isGroup) {
     var fs = el.closest('fieldset'), lg = fs && fs.querySelector('legend');
@@ -4188,20 +4230,41 @@ html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
       var v = c.data[o.key];
       if (Array.isArray(v)) v = v.join(', ');
       return o.label + ': ' + (v || '-');
-    }).join('\n');
+    }).join('\r\n');
   }
   Array.prototype.forEach.call(document.querySelectorAll('form[data-form]'), function (form) {
     var status = form.querySelector('.form-status');
     var btn = form.querySelector('[type="submit"]');
     var btnHTML = btn ? btn.innerHTML : '';
     function setStatus(kind, html) { if (status) { status.className = 'form-status ' + kind; status.innerHTML = html; } }
+    function clearInvalid(e) {
+      var t = e.target;
+      if (!t || !t.validity || !t.validity.valid) return;
+      var group = t.type === 'radio' && t.name ? form.querySelectorAll('input[type="radio"][name="' + t.name + '"]') : [t];
+      Array.prototype.forEach.call(group, function (el) { el.removeAttribute('aria-invalid'); });
+    }
+    form.addEventListener('input', clearInvalid);
+    form.addEventListener('change', clearInvalid);
+    form.addEventListener('reset', function () { Array.prototype.forEach.call(form.querySelectorAll('[aria-invalid]'), function (el) { el.removeAttribute('aria-invalid'); }); });
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var hp = form.querySelector('[name="lc_hp_check"]');
       if (hp && hp.value) { setStatus('ok', '<strong>Thank you.</strong> We aim to be in touch within one business day.'); return; } // honeypot
+      // Trim text so spaces alone cannot satisfy a required field.
+      Array.prototype.forEach.call(form.querySelectorAll('input[type="text"],input[type="email"],input[type="tel"],textarea'), function (el) {
+        if (el.value !== el.value.trim()) el.value = el.value.trim();
+      });
       if (!form.checkValidity()) {
+        var bad = null;
+        Array.prototype.forEach.call(form.elements, function (el) {
+          if (!el.willValidate) return;
+          if (el.validity.valid) el.removeAttribute('aria-invalid');
+          else { el.setAttribute('aria-invalid', 'true'); if (!bad) bad = el; }
+        });
         form.reportValidity();
-        setStatus('err', 'Please complete the required fields marked with *.');
+        var badLabel = bad ? fieldLabel(form, bad, bad.type === 'radio') : '';
+        if (badLabel.length > 60) badLabel = badLabel.slice(0, 57).replace(/\s+\S*$/, '') + '\u2026';
+        setStatus('err', bad ? 'Please check <strong>' + escHtml(badLabel) + '</strong>: ' + escHtml(bad.validationMessage) : 'Please complete the required fields marked with *.');
         return;
       }
       var c = collectForm(form);
@@ -5219,12 +5282,43 @@ html.a11y-contrast .pg-face input:checked+label *{color:#000!important}
     syncInterp();
   }
 
+  /* Call backs need a phone number */
+  var fInquiry = document.getElementById('f-inquiry');
+  var fPhone = document.getElementById('f-phone');
+  function syncContactPhone() {
+    if (!fInquiry || !fPhone) return;
+    var on = fInquiry.value === 'Request a callback';
+    setRequired(fPhone, on);
+    var req = document.getElementById('f-phone-req');
+    if (req) req.hidden = !on;
+  }
+  if (fInquiry) {
+    fInquiry.addEventListener('change', syncContactPhone);
+    syncContactPhone();
+  }
+  var fbCallback = document.getElementById('fb-callback');
+  var fbPhone = document.getElementById('fb-phone');
+  function syncFbPhone() {
+    if (!fbCallback || !fbPhone) return;
+    var on = fbCallback.checked;
+    setRequired(fbPhone, on);
+    var opt = document.getElementById('fb-phone-opt'), req = document.getElementById('fb-phone-req');
+    if (opt) opt.hidden = on;
+    if (req) req.hidden = !on;
+  }
+  if (fbCallback) {
+    fbCallback.addEventListener('change', syncFbPhone);
+    syncFbPhone();
+  }
+
   /* Re-sync after a form is reset (for example after a successful send) */
-  function onReset() { setTimeout(function () { syncAnon(); syncInterp(); }, 0); }
+  function onReset() { setTimeout(function () { syncAnon(); syncInterp(); syncContactPhone(); syncFbPhone(); }, 0); }
   var fbForm = document.getElementById('fb-form');
   var rForm = document.getElementById('r-form');
   if (fbForm) fbForm.addEventListener('reset', onReset);
   if (rForm) rForm.addEventListener('reset', onReset);
+  var eForm = document.getElementById('enquiry-form');
+  if (eForm) eForm.addEventListener('reset', onReset);
 
   /* "Clear rating" button: the rating is optional, so let people undo a choice */
   var clearBtn = document.getElementById('fb-rate-clear');
