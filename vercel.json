@@ -1,5 +1,6 @@
 {
   "redirects": [
+    { "source": "/", "has": [{ "type": "host", "value": "lenity-care-website.vercel.app" }], "destination": "https://www.lenity.com.au/", "permanent": true },
     { "source": "/:path*", "has": [{ "type": "host", "value": "lenity-care-website.vercel.app" }], "destination": "https://www.lenity.com.au/:path*", "permanent": true },
     { "source": "/about-us", "destination": "/#/about", "permanent": true },
     { "source": "/about-us/", "destination": "/#/about", "permanent": true },
