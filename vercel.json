@@ -1,5 +1,6 @@
 {
   "redirects": [
+    { "source": "/:path*", "has": [{ "type": "host", "value": "lenity-care-website.vercel.app" }], "destination": "https://www.lenity.com.au/:path*", "permanent": true },
     { "source": "/about-us", "destination": "/#/about", "permanent": true },
     { "source": "/about-us/", "destination": "/#/about", "permanent": true },
     { "source": "/meet-the-team", "destination": "/#/about", "permanent": true },
@@ -10,6 +11,8 @@
     { "source": "/contact-us/", "destination": "/#/contact", "permanent": true },
     { "source": "/privacy-policy", "destination": "/#/privacy", "permanent": true },
     { "source": "/privacy-policy/", "destination": "/#/privacy", "permanent": true },
+    { "source": "/wp-admin", "destination": "/", "permanent": false },
+    { "source": "/wp-admin/", "destination": "/", "permanent": false },
     { "source": "/wp-admin/:path*", "destination": "/", "permanent": false },
     { "source": "/wp-login.php", "destination": "/", "permanent": false }
   ],
